@@ -27,6 +27,7 @@ dependencies {
     androidTestImplementation 'com.android.support.test:runner:1.0.2'
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
 
+    //dagger.android is just an addon, casue overall dagger was made for java not android, so there are some problems
     implementation "com.google.dagger:dagger:$gradle_version"
     annotationProcessor "com.google.dagger:dagger-compiler:$gradle_version"
 }
