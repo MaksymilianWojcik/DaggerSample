@@ -3,7 +3,7 @@ package pl.com.bubka.daggersample;
 import dagger.Component;
 
 //Component creates and stores our objects, and than provides them to us. Aka injector.
-@Component(modules = WheelsModule.class) //without this it wouldnt work
+@Component(modules = {WheelsModule.class, PetrolEngineModule.class}) //without this it wouldnt work
 public interface CarComponent {
 
     /***

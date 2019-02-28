@@ -36,7 +36,11 @@ Anbd we know one way: by constructor. But this is not always that simple - what 
 For example lets say it comes from some 3rd party. See Rim & Tires & Wheels for example.
 So as we have no access to construcotr, so here as help comes Modules and @Provides annotation.
 
-
-
+@Binds
+For providing interfaces.
+When we instantiate class, we already know how to do this to inject / provide dependency for it.
+But what if we need to inject a interface?
+As we know, interfaces dont have constructors, so constructor injection falls out.
+We have to use modules here and provides
 
  */

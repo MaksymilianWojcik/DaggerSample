@@ -19,17 +19,21 @@ public class Car {
     //This is because field and method injection are only automatically injected if we also do constructor injection, as this is
     //what triggers the whole process. In activity we cant do constructor injection, so we have to trigger constructor process manually
     //by calling inject. The same way method in MainActivity with @Inject would be called, but generally we dont do method injection in activitys.
-    @Inject Engine engine;
+//    private Engine engine;
+    private EngineInterface engineInterface;
 
     //We pass dependenceis in constructor, we dont want to create object here
     @Inject //thanks to this dagger knows how to instantiate a Car object. Of course we have to also inject wheels and engine as we dont instantiate it here
-    public Car(Wheels wheels) {
+    public Car(Wheels wheels, EngineInterface engineInterface/*Engine engine*/) {
         this.wheels = wheels;
+        this.engineInterface = engineInterface;
+//        this.engine = engine;
     }
     //: If we would inject by field here and remove from constructor, dagger first creates constructor and its injections,
     //    //than field injection, and than calls the injected methods
 
     public void drive(){
+        engineInterface.start();
         Log.i(TAG, "drive()  ");
     }
 
