@@ -14,4 +14,7 @@ public interface CarComponent {
      */
     Car getCar();
 
+    //we cant declare super class like Activity, we have to make this for every activity where we want to inject dependenceis
+    void inject(MainActivity mainActivity);
+
 }
