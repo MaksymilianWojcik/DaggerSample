@@ -1,7 +1,10 @@
-package pl.com.bubka.daggersample;
+package pl.com.bubka.daggersample.dagger;
 
 import dagger.Module;
 import dagger.Provides;
+import pl.com.bubka.daggersample.car.Rims;
+import pl.com.bubka.daggersample.car.Tires;
+import pl.com.bubka.daggersample.car.Wheels;
 
 @Module
 public class WheelsModule {

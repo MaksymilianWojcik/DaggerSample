@@ -1,4 +1,4 @@
-package pl.com.bubka.daggersample;
+package pl.com.bubka.daggersample.car;
 
 public interface EngineInterface {
     void start();

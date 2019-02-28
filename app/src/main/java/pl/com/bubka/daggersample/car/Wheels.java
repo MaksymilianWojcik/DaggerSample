@@ -1,6 +1,4 @@
-package pl.com.bubka.daggersample;
-
-import javax.inject.Inject;
+package pl.com.bubka.daggersample.car;
 
 public class Wheels {
 

@@ -1,8 +1,9 @@
-package pl.com.bubka.daggersample;
+package pl.com.bubka.daggersample.dagger;
 
 import dagger.Binds;
 import dagger.Module;
-import dagger.Provides;
+import pl.com.bubka.daggersample.car.EngineInterface;
+import pl.com.bubka.daggersample.car.PetrolEngine;
 
 @Module
 public abstract class PetrolEngineModule {

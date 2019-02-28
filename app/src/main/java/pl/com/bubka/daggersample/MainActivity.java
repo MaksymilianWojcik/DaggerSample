@@ -5,10 +5,13 @@ import android.os.Bundle;
 
 import javax.inject.Inject;
 
+import pl.com.bubka.daggersample.car.Car;
+import pl.com.bubka.daggersample.dagger.CarComponent;
+
 public class MainActivity extends AppCompatActivity {
 
     @Inject //when @Inject on field, field cannot be private! or final!
-    Car car;
+            Car car;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

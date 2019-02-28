@@ -1,4 +1,4 @@
-package pl.com.bubka.daggersample;
+package pl.com.bubka.daggersample.car;
 
 import android.util.Log;
 

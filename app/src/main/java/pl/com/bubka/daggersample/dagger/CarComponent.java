@@ -1,6 +1,8 @@
-package pl.com.bubka.daggersample;
+package pl.com.bubka.daggersample.dagger;
 
 import dagger.Component;
+import pl.com.bubka.daggersample.car.Car;
+import pl.com.bubka.daggersample.MainActivity;
 
 //Component creates and stores our objects, and than provides them to us. Aka injector.
 @Component(modules = {WheelsModule.class, DieselEngineModule.class}) //we sawp here between DieselEngineModule and PetrolEngineModule, which makes it easy to test. However we cannot put two modules at same time, cause dagger doesnt know which omne to use
