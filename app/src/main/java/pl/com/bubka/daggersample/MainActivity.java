@@ -28,3 +28,15 @@ public class MainActivity extends AppCompatActivity {
         car.drive();
     }
 }
+
+/*
+@Modules and @Provides
+Quick recap: in a nutshell, dagger creates objects and provides them at a proper time, but at ceratin point we have to teach dagger how to do this.
+Anbd we know one way: by constructor. But this is not always that simple - what if we dont own the class and cannot annotate constructor?
+For example lets say it comes from some 3rd party. See Rim & Tires & Wheels for example.
+So as we have no access to construcotr, so here as help comes Modules and @Provides annotation.
+
+
+
+
+ */
