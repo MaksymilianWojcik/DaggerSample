@@ -43,4 +43,7 @@ But what if we need to inject a interface?
 As we know, interfaces dont have constructors, so constructor injection falls out.
 We have to use modules here and provides
 
+After we have added 2 modules for Petrol and Dioesel engine and their interface, we can easily swap between them for the
+inection in Car class constructor, by simply chaning in the CarComponent the module class, from one to other.
+
  */
