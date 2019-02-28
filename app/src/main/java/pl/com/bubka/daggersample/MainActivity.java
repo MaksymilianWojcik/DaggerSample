@@ -7,6 +7,8 @@ import javax.inject.Inject;
 
 import pl.com.bubka.daggersample.car.Car;
 import pl.com.bubka.daggersample.dagger.CarComponent;
+import pl.com.bubka.daggersample.dagger.DaggerCarComponent;
+import pl.com.bubka.daggersample.dagger.DieselEngineModule;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -19,7 +21,8 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         //When we build the app, Dagger create a class DaggerCLASSComponent, from our CLASS that we provided in the @component.
-        CarComponent component = DaggerCarComponent.create();
+//        CarComponent component = DaggerCarComponent.create(); //create() can be called only when we dont gave arguments
+        CarComponent component = DaggerCarComponent.builder().dieselEngineModule(new DieselEngineModule(100)).build();
         component.inject(this);
 //        car = component.getCar(); //It looks that there is a Car return type methods, so it prepares the method that returns the car
         //Why in Car class we just put @Inject on field and the field will be injected, but in MainActivity we have to make .inject()?
@@ -48,5 +51,9 @@ We have to use modules here and provides
 
 After we have added 2 modules for Petrol and Dioesel engine and their interface, we can easily swap between them for the
 inection in Car class constructor, by simply chaning in the CarComponent the module class, from one to other.
+
+
+Injecting values at runtime
+
 
  */
