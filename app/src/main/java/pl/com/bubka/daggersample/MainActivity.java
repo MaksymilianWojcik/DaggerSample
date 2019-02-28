@@ -19,6 +19,11 @@ public class MainActivity extends AppCompatActivity {
         CarComponent component = DaggerCarComponent.create();
         component.inject(this);
 //        car = component.getCar(); //It looks that there is a Car return type methods, so it prepares the method that returns the car
+        //Why in Car class we just put @Inject on field and the field will be injected, but in MainActivity we have to make .inject()?
+        //This is because field and method injection are only automatically injected if we also do constructor injection, as this is
+        //what triggers the whole process. In activity we cant do constructor injection, so we have to trigger constructor process manually
+        //by calling inject. The same way method in MainActivity with @Inject would be called, but generally we dont do method injection in activitys.
+
 
         car.drive();
     }
