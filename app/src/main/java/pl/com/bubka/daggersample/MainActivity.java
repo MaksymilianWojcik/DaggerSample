@@ -22,7 +22,10 @@ public class MainActivity extends AppCompatActivity {
 
         //When we build the app, Dagger create a class DaggerCLASSComponent, from our CLASS that we provided in the @component.
 //        CarComponent component = DaggerCarComponent.create(); //create() can be called only when we dont gave arguments
-        CarComponent component = DaggerCarComponent.builder().dieselEngineModule(new DieselEngineModule(100)).build();
+        CarComponent component = DaggerCarComponent.builder()
+//                .dieselEngineModule(new DieselEngineModule(100))
+                .horsePower(150) //tghanks to the @Builder we created in PetrolEngineModule. This value will be added to the dependency graph and dagger will use it whenever we need and integer
+                .build();
         component.inject(this);
 //        car = component.getCar(); //It looks that there is a Car return type methods, so it prepares the method that returns the car
         //Why in Car class we just put @Inject on field and the field will be injected, but in MainActivity we have to make .inject()?
