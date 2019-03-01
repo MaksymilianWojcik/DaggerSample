@@ -8,11 +8,15 @@ public class PetrolEngine implements EngineInterface {
 
     private static final String TAG = "Car";
 
+    private int horsePower;
+
     @Inject
-    public PetrolEngine(){}
+    public PetrolEngine(int horsePower){
+        this.horsePower = horsePower;
+    }
 
     @Override
     public void start() {
-        Log.i(TAG, "start petrol engine");
+        Log.i(TAG, "start petrol engine with horse Power: " + horsePower);
     }
 }

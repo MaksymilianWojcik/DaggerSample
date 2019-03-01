@@ -54,6 +54,8 @@ inection in Car class constructor, by simply chaning in the CarComponent the mod
 
 
 Injecting values at runtime
+With @Provides and using different way of instantiating CarComponent in MainActivity
 
+@Component.Builder & @BindsInstance & @Named
 
  */
