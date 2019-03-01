@@ -1,5 +1,7 @@
 package pl.com.bubka.daggersample.dagger;
 
+import javax.inject.Named;
+
 import dagger.BindsInstance;
 import dagger.Component;
 import pl.com.bubka.daggersample.car.Car;
@@ -26,7 +28,10 @@ public interface CarComponent {
         //on our generated DaggerCarComponent class at .build() method
 
         @BindsInstance //simple java builder pattern, allows method chaincalls on the builder
-        Builder horsePower(int horsePower); //Thanks to this solution, our PetrolEngine can still stay abstract and we dont need to modify it and dagger still no need to instantiate it which is more performance efficient
+        Builder horsePower(@Named("horsePower") int horsePower); //Thanks to this solution, our PetrolEngine can still stay abstract and we dont need to modify it and dagger still no need to instantiate it which is more performance efficient
+
+        @BindsInstance
+        Builder engineCapacity(@Named("engineCapacity") int engineCapacity);
 
         CarComponent build(); //no body, dagger will implement it automacilyy. We override build definition
 

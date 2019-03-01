@@ -25,6 +25,7 @@ public class MainActivity extends AppCompatActivity {
         CarComponent component = DaggerCarComponent.builder()
 //                .dieselEngineModule(new DieselEngineModule(100))
                 .horsePower(150) //tghanks to the @Builder we created in PetrolEngineModule. This value will be added to the dependency graph and dagger will use it whenever we need and integer
+                .engineCapacity(1400)
                 .build();
         component.inject(this);
 //        car = component.getCar(); //It looks that there is a Car return type methods, so it prepares the method that returns the car
